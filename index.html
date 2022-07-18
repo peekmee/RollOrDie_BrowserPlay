@@ -7,9 +7,9 @@
     <link rel="shortcut icon" href="TemplateData/favicon.ico">
     <link rel="stylesheet" href="TemplateData/style.css">
   </head>
-  <body>
+  <body style="overflow: hidden;">
     <div id="unity-container" class="unity-desktop">
-      <canvas id="unity-canvas" width=960 height=600></canvas>
+      <canvas id="unity-canvas" width="100wv" height="100vh"></canvas>
       <div id="unity-loading-bar">
         <div id="unity-logo"></div>
         <div id="unity-progress-bar-empty">
@@ -20,9 +20,10 @@
         WebGL builds are not supported on mobile devices.
       </div>
       <div id="unity-footer">
-        <div id="unity-webgl-logo"></div>
+        <!-- <div id="unity-webgl-logo"></div> -->
         <div id="unity-fullscreen-button"></div>
-        <div id="unity-build-title">Roll or Die</div>
+        <!-- <p>Fullscreen</p> -->
+        <!-- <div id="unity-build-title">Roll or Die</div> -->
       </div>
     </div>
     <script>
@@ -62,8 +63,10 @@
           mobileWarning.style.display = "none";
         }, 5000);
       } else {
-        canvas.style.width = "960px";
-        canvas.style.height = "600px";
+        let height = window.innerHeight;
+        let width = window.innerWidth;
+        canvas.style.width = width+"px";
+        canvas.style.height = height+"px";
       }
       loadingBar.style.display = "block";
 
